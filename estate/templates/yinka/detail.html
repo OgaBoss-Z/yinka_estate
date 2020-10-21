@@ -1,0 +1,45 @@
+{% extends 'yinka/base.html' %}
+{% load static %}
+{% load humanize %}
+
+
+
+{% block content %}
+
+   <main id="main">
+
+      <!-- ======= property Details Section ======= -->
+      <section class="property-details">
+         <div class="container">
+
+         <div class="property-details-container">
+
+            <div class="owl-carousel property-details-carousel">
+               {% for img in images %}
+                  <img src="{{img.image.url}}" class="img-fluid" alt="">
+               {% endfor %}
+            </div>
+
+            <div class="property-info">
+               <h3>Property information</h3>
+               <ul>
+                  <li><strong>Location</strong>: {{properties.location}}</li>
+                  <li><strong>Main</strong>: {{properties.bedrooms}} Bedrooms  & {{properties.bathrooms}} Bathrooms</li>
+                  <li><strong>Price</strong>: ₦ {{properties.price | intcomma}}</li>
+               </ul>
+            </div>
+
+         </div>
+
+         <div class="property-description">
+            <h2>{{properties.name}}</h2>
+            <p>
+               {{properties.description | safe}}
+            </p>
+         </div>
+         </div>
+      </section><!-- End property Details Section -->
+
+   </main><!-- End #main -->
+
+{% endblock %}

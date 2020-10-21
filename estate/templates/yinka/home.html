@@ -1,0 +1,205 @@
+{% extends 'yinka/base.html' %}
+{% load static %}
+{% load humanize %} 
+
+{% block content %}
+
+   <!--::banner part start::-->
+   <section class="banner_part">
+      <div class="container">
+         <div class="row align-content-center">
+            <div class="col-lg-6">
+               <div class="banner_text aling-items-center">
+                  <div class="banner_text_iner">
+                     
+                     <h2>Welcome to <br>
+                        Yinka Kayode & Co.
+                     </h2>
+                     <h5>Estate Surveyors and Valuers...</h5>
+                     <p>
+                        Our strength is the experience of our team and product of continuous 
+                        support and patronage we have been enjoying from similar corporate 
+                        organisation and notable individuals.
+                     </p>
+                     <a href="{% url 'properties-page' %}" class="btn_1 banner_btn ">View Properties</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!--::banner part end::-->
+
+   <!--::team part end::-->
+   <section class="team_part">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-6">
+               <div class="team_img"></div>
+            </div>
+            <div class="offset-lg-1 col-lg-5">
+               <div class="team_member_text">
+                  <h2>The Team That Cares</h2>
+                  <p>
+                     Yinka Kayode and co. is a group of qualified, young & experienced professional Estate
+                     Surveyors and Valuers, tested and proven, led by a management team whose resumes
+                     reflect nothing short of a wealth of experience in all facets of real estate
+                     surveying and valuation practice.
+                  </p>
+                  <ul>
+                     <li><span class="ti-paint-bucket"></span>A team where everyone contributes their fair share</li>
+                     <li><span class="ti-check-box"></span>A team that offers each other supports when needed.</li>
+                     <li><span class="ti-ruler-pencil"></span>Team members are diverse in their own experiences and  knowledge.</li>
+                  </ul>
+                  <a href="#" class="btn_1">Know More</a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <img src="img/section_overlay.png" alt="">
+   </section>
+   <!--::team part end::-->
+
+   <!--::passion_part end::-->
+   <div class="passion_part">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-5">
+               <div class="section_tittle">
+                  <h1>We are who we are...</h1>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-6 col-lg-4">
+               <div class="single_passion">
+                  <div class="single_passion_item">
+                     <a href="#" class="passion_icon"> <i class="fa fa-low-vision" aria-hidden="true"></i> </a>
+                     <h4>Our Vision</h4>
+                     <p>To become a world class enviable standard in Real Estate Practices</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+               <div class="single_passion">
+                  <div class="single_passion_item">
+                     <a href="#" class="passion_icon"> <i class="fa fa-trophy"></i> </a>
+                     <h4>Our Mission</h4>
+                     <p>To operate an exceptional firm of Estate Surveyors and Valuers with a view to rendering utmost 
+                        Service to Clients with integrity, quality and excellence.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+               <div class="single_passion">
+                  <div class="single_passion_item">
+                     <a href="#" class="passion_icon"><i class="fa fa-object-group" aria-hidden="true"></i> </a>
+                     <h4>Core Values</h4>
+                     <p>Some of our core values are integrity, innovation, team work among others.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--::passion_part end::-->
+
+   <!--::apartment_part end::-->
+   <div class="apartment_part">
+      <div class="container">
+         <div class="row justify-content-between align-content-center">
+            <div class="col-md-8 col-lg-7">
+               <div class="section_tittle">
+                  <h1>Featured Properties</h1>
+               </div>
+            </div>
+            <div class="col-md-4 col-lg-5">
+               <div class="view_more_btn float-right d-none d-md-block">
+                  <a href="{% url 'properties-page' %}" class="btn_2">View More <span class="ti-arrow-right"></span></a>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            {% for property in properties %}
+               <div class="col-md-4 col-lg-4">
+                  <div class="single_appartment_part">
+                     <div class="appartment_img">
+                        <img src="{{property.display_img.url}}" alt="">
+                        <div class="single_appartment_text">
+                           <h3> ₦ {{property.price | intcomma}}</h3>
+                           <p><span class="ti-location-pin"></span> {{property.location}}</p>
+                        </div>
+                     </div>
+                     <div class="single_appartment_content">
+                        <a href="" class="love_us"> <span class="ti-heart"></span> </a>
+                        <p>Home, Apartment</p>
+                        <a href="{{property.get_absolute_url}}">
+                           <h4>{{property.name}}</h4>
+                        </a>
+                        <ul class="list-unstyled">
+                           <li><a href=""><span class="flaticon-bath"></span></a> {{property.bathrooms}}</li>
+                           <li><a href=""><span class="flaticon-bed"></span></a> {{property.bedrooms}}</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            {% endfor %}
+            
+         </div>
+      </div>
+   </div>
+   <!--::apartment_part end::-->
+
+
+   <!--::review_part end::-->
+   <div class="review_part" id="testimonial">
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-8 col-lg-10">
+               <div class="section_tittle">
+                  <h1>What Our Customers say</h1>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="review_part_text owl-carousel">
+                  <div class="singler_eview_part">
+                     <div class="client_info">
+                        <img src="{% static 'yinka/img/ogaboss.jpg' %}" alt="">
+                        <h4>OgaBoss</h4>
+                        <p>CEO OgaBoss</p>
+                     </div>
+                     <p>
+                        <i>
+                           In publishing and graphic design, Lorem ipsum is a placeholder text commonly 
+                           used to demonstrate the visual form of a document or a typeface without relying 
+                           on meaningful content.
+                        </i>
+                     </p>
+                  </div>
+                  <div class="singler_eview_part">
+                     <div class="client_info">
+                        <img src="{% static 'yinka/img/deen.jpg' %}" alt="">
+                        <h4>Zahradeen Z.</h4>
+                        <p>Director YKC</p>
+                     </div>
+                     <p>
+                        <i>
+                           is a long established fact that a reader will be distracted by the readable 
+                           content of a page when looking at its layout. The point of using Lorem Ipsum 
+                           is that it has a more-or-less normal distribution of letters, as opposed to 
+                           using 'Content here, content here', making it look like readable English. 
+                        </i>
+                     </p>
+                  </div>
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--::review_part end::-->
+
+
+{% endblock %}

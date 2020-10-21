@@ -1,0 +1,64 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Yinka Koyode & Co.</title>
+   <link rel="icon" href="img/favicon.png">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="{% static 'yinka/css/bootstrap.min.css' %}">
+   <!-- animate CSS -->
+   <link rel="stylesheet" href="{% static 'yinka/css/animate.css' %}">
+   <!-- owl carousel CSS -->
+   <link rel="stylesheet" href="{% static 'yinka/css/owl.carousel.min.css' %}">
+   <!-- themify CSS -->
+   <link rel="stylesheet" href="{% static 'yinka/css/themify-icons.css' %}">
+   <!-- flaticon CSS -->
+   <link rel="stylesheet" href="{% static 'yinka/css/flaticon.css' %}">
+   <!-- magnific-popup CSS -->
+   <link rel="stylesheet" href="{% static 'yinka/css/magnific-popup.css' %}">
+   <!-- font awesome CSS -->
+   <link rel="stylesheet" href="{% static 'yinka/fontawesome/css/all.min.css' %}">
+   <!-- style CSS -->
+   <link rel="stylesheet" href="{% static 'yinka/css/style.css' %}">
+</head>
+
+<body>
+   <!-- Navbar -->
+   {% include 'yinka/navbar.html' %}
+   <!-- End of Navbar -->
+
+   <!-- Block content -->
+   {% block content %}
+
+
+   {% endblock %}
+   <!-- End of Block Content -->
+
+   <!-- footer -->
+   {% include 'yinka/footer.html' %}
+   <!-- End of Footer -->
+
+   
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="{% static 'yinka/js/jquery-1.12.1.min.js' %}"></script>
+   <!-- popper js -->
+   <script src="{% static 'yinka/js/popper.min.js' %}"></script>
+   <!-- bootstrap js -->
+   <script src="{% static 'yinka/js/bootstrap.min.js' %}"></script>
+   <!-- easing js -->
+   <script src="{% static 'yinka/js/jquery.magnific-popup.js' %}"></script>
+   <!-- particles js -->
+   <script src="{% static 'yinka/js/owl.carousel.min.js' %}"></script>
+   <!-- easing js -->
+   <script src="{% static 'yinka/js/jquery.easing.min.js' %}"></script>
+   <!-- custom js -->
+   <script src="{% static 'yinka/js/custom.js' %}"></script>
+</body>
+
+</html>

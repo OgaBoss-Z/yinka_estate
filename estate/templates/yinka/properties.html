@@ -1,0 +1,50 @@
+{% extends 'yinka/base.html' %}
+{% load static %}
+{% load humanize %} 
+
+{% block content %}
+
+   <!--::apartment_part end::-->
+   <div class="apartment_part">
+      <div class="container">
+         <div class="row justify-content-between align-content-center">
+            <div class="col-md-8 col-lg-7">
+               <div class="section_tittle">
+                     <h1>Available to Let/Lease</h1>
+               </div>
+            </div>
+            <div class="col-md-4 col-lg-5">
+               <div class="view_more_btn float-right d-none d-md-block">
+                     <a href="#" class="btn_2">Read More <span class="ti-arrow-right"></span></a>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            {% for property in properties %}
+               <div class="col-md-4 col-lg-4">
+                  <div class="single_appartment_part">
+                     <div class="appartment_img">
+                        <img src="{{property.display_img.url}}" alt="">
+                        <div class="single_appartment_text">
+                           <h3> ₦ {{property.price | intcomma}}</h3>
+                           <p><span class="ti-location-pin"></span>{{property.location}}</p>
+                        </div>
+                     </div>
+                     <div class="single_appartment_content">
+                        <a href="" class="love_us"> <span class="ti-heart"></span> </a>
+                        <p>Home, Apartment</p>
+                        <a href="{{property.get_absolute_url}}"><h4>{{property.name}}</h4></a>
+                        <ul class="list-unstyled"> 
+                           <li><a href=""><span class="flaticon-bath"></span></a> {{property.bathrooms}}</li>
+                           <li><a href=""><span class="flaticon-bed"></span></a> {{property.bedrooms}}</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            {% endfor %}
+         </div>
+      </div>
+   </div>
+   <!--::apartment_part end::-->
+
+{% endblock %}
